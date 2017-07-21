@@ -22,18 +22,49 @@ namespace Textumbruch
         {
             string[] words = s.Split(' ');
             int length = 0;
+            string tmpWord = "";
+            string tmpWordOverHead = "";
             foreach (string word in words)
             {
-                Console.Write(word);
-                Console.Write(" ");
-                length = length + word.Length;
-                if (length > int.Parse(p))
+                tmpWord += word + " ";
+                tmpWord = CheckWordFit(tmpWord, p);
+                tmpWordOverHead = CheckWordOverHead(tmpWord, p);
+
+                length += tmpWord.Length;
+                if (length >= int.Parse(p))
                 {
-                    Console.WriteLine("");
+                    Console.WriteLine(tmpWord.Substring(0,int.Parse(p)));
                     length = 0;
+                    tmpWord = tmpWord.Substring(int.Parse(p));
                 }
 
             }
+        }
+
+        private String CheckWordFit(String s, String p)
+        {
+            if (s.Length > int.Parse(p))
+            {
+                return s.Substring(0, int.Parse(p));
+            }
+            else
+            {
+                return s;
+            }
+            
+        }
+
+        private String CheckWordOverHead(String s, String p)
+        {
+            if (s.Length > int.Parse(p))
+            {
+                return s.Substring(int.Parse(p),s.Length- int.Parse(p));
+            }
+            else
+            {
+                return "";
+            }
+
         }
     }
 }
