@@ -25,16 +25,19 @@ namespace Textumbruch
                 if (currentLength > 0  )
                 {
                     yield return ReturnNewLineOrWhiteSpace(ref currentLength, word.Length, lineLength);
+                    currentLength += word.Length;
                 }
 
-                currentLength += word.Length;
+                //currentLength += word.Length;
                 if (word.Length > lineLength)
                 {
                     yield return word.Substring(0, lineLength) + "\n" + word.Substring(lineLength,word.Length-lineLength);
+                    currentLength += word.Length;
                 }
                 else
                 {
                     yield return word;
+                    currentLength += word.Length;
                 }
                 
             }
