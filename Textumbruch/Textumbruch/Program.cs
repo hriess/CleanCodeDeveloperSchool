@@ -9,6 +9,7 @@ namespace Textumbruch
     class Program
     {
         private PrintTextUmbruch ptu = new PrintTextUmbruch();
+        private WordWrap wowa = new WordWrap();
         
         static void Main(string[] args)
         {
@@ -20,13 +21,21 @@ namespace Textumbruch
             }
             else
             {
-                p.PrintText(args);
+                 p.PrintText(args);
+                //p.Wrap(args[0], int.Parse(args[1]));
             }
         }
 
         private void PrintText(string[] args)
         {
             ptu.PrintTextMitUmbruch(args[0], args[1]);
+            for (int i = 3 ; i <= int.Parse((args[1])); i++)
+            {
+                System.Console.Out.WriteLine("iteration: " + i + "\n");
+                System.Console.Out.WriteLine(wowa.Wrap(args[0], i));
+                System.Console.Out.WriteLine("---------------------------");
+            }
+            Console.ReadLine();
         }
 
         private void WrongNumberOfParameter(string[] args)

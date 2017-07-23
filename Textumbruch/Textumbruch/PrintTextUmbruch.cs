@@ -13,9 +13,9 @@ namespace Textumbruch
         {
             System.Console.Out.WriteLine("Original Text:");
             System.Console.Out.WriteLine(param1);
-            System.Console.Out.WriteLine("Text Umbruch mit max. Zeilenlänge von " + param2 + " Zeichen:");
-            TextUmbruch(param1, param2);
-            Console.ReadLine();
+            System.Console.Out.WriteLine("\nText Umbruch von 3 bis max. Zeilenlänge von " + param2 + " Zeichen:");
+            //TextUmbruch(param1, param2);
+            //Console.ReadLine();
         }
 
         public void TextUmbruch(String s, String p)
@@ -33,9 +33,18 @@ namespace Textumbruch
                 length += tmpWord.Length;
                 if (length >= int.Parse(p))
                 {
-                    Console.WriteLine(tmpWord.Substring(0,int.Parse(p)));
-                    length = 0;
-                    tmpWord = tmpWord.Substring(int.Parse(p));
+                    try
+                    {
+                        Console.WriteLine(tmpWord.Substring(0,int.Parse(p)));
+                        length = 0;
+                        tmpWord = tmpWord.Substring(int.Parse(p));
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        // throw;
+                    }
+
                 }
 
             }
