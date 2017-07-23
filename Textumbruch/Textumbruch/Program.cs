@@ -29,7 +29,7 @@ namespace Textumbruch
         private void PrintText(string[] args)
         {
             ptu.PrintTextMitUmbruch(args[0], args[1]);
-            for (int i = 3 ; i <= int.Parse((args[1])); i++)
+            for (int i = int.Parse((args[1])) - 2; i <= int.Parse((args[1])); i++)
             {
                 System.Console.Out.WriteLine("iteration: " + i + "\n");
                 System.Console.Out.WriteLine(wowa.Wrap(args[0], i));

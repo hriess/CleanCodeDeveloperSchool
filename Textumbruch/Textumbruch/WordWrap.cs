@@ -31,7 +31,7 @@ namespace Textumbruch
                 //currentLength += word.Length;
                 if (word.Length > lineLength)
                 {
-                    yield return word.Substring(0, lineLength) + "\n" + word.Substring(lineLength,word.Length-lineLength);
+                    yield return word.Substring(0, lineLength) + "\n" + word.Substring(lineLength, word.Length - lineLength); 
                     currentLength += word.Length;
                 }
                 else
