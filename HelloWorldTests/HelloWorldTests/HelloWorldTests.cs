@@ -10,11 +10,34 @@ namespace HelloWorldTests
     [TestFixture]
     class HelloWorldTests
     {
-        [Test]
-        public void HelloWorld()
+        // private int i = 0;
+        //[Test]
+        public void HelloWorld(int i)
         {
-            Assert.That(4+5, Is.EqualTo(9));
+            Assert.That(i, Is.LessThanOrEqualTo(6));
+            System.Console.Out.WriteLine("Iteration: " + i);
             //Assert.That(4 + 5, Is.EqualTo(10));
+        }
+
+         [Test]
+        public void HelloWorld_1_to_6_times()
+        {
+            for ( var i = 1; i < 8; i++)
+            {
+                HelloWorld(i);
+                
+            }
+        }
+        [Test]
+        public void HelloWorld_5_to1_7_times()
+        {
+            for (var i = 1; i < 7; i++)
+            {
+                System.Console.Out.WriteLine("-------"+ i);
+                HelloWorld(i);
+                HelloWorld_1_to_6_times();
+                
+            }
         }
     }
 }
