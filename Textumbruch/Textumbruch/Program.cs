@@ -10,12 +10,14 @@ namespace Textumbruch
     {
         private PrintTextUmbruch ptu = new PrintTextUmbruch();
         private WordWrap wowa = new WordWrap();
-        //private WordWrapJava01 wowaJava01 = new WordWrapJava01();
+        //private WordWrapJava01 wowa = new WordWrapJava01();
 
         
         static void Main(string[] args)
         {
             var p = new Program();
+            //private PrintTextUmbruch ptu = new PrintTextUmbruch();
+            //private WordWrap wowa = new WordWrap();
 
             if (args.Length != 2)
             {
