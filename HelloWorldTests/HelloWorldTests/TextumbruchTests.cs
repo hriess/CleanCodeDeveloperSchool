@@ -11,6 +11,8 @@ namespace Textumbruch
     [TestFixture]
     class TextumbruchTests
     {
+        private string TestString = "Es blaut die Nacht,die Sternlein blinken, Schneeflöcklein leis hernieder sinken.";
+
         // private int i = 0;
         //[Test]
         public void HelloWorld(int i)
@@ -20,7 +22,7 @@ namespace Textumbruch
             //Assert.That(4 + 5, Is.EqualTo(10));
         }
 
-         [Test]
+         [Test, Explicit]
         public void HelloWorld_1_to_6_times()
         {
             for ( var i = 1; i < 8; i++)
@@ -29,7 +31,7 @@ namespace Textumbruch
                 
             }
         }
-        [Test]
+        [Test, Explicit]
         public void HelloWorld_5_to1_7_times()
         {
             for (var i = 1; i < 7; i++)
@@ -41,6 +43,12 @@ namespace Textumbruch
             }
         }
 
-        te
+        [Test]
+        public void WordWrap10()
+        {
+            var x = new WordWrapJava01(10);
+            Assert.That("Es blaut\ndie\nNacht,die\nSternlein\nblinken,\nSchneeflöc\nklein leis\nhernieder\nsinken.", Is.EqualTo(x.wrap(TestString)));
+        }
+
     }
 }

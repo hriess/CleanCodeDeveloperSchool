@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Textumbruch\Textumbruch\Textumbruch.csproj">
+      <Project>{25a4235f-855b-477f-8f1c-0bdc38a6fe16}</Project>
+      <Name>Textumbruch</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
