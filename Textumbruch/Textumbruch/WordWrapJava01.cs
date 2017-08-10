@@ -1,9 +1,5 @@
 ﻿using System;
 
-
-// "Es blaut die Nacht,die Sternlein blinken, Schneeflöcklein leis hernieder sinken."
-
-
 namespace Textumbruch
 {
     public class WordWrapJava01
@@ -26,7 +22,10 @@ namespace Textumbruch
         public WordWrapJava01(int len) : this(" ", "\n", len)
         {
         }
-
+        public static String wrap(String words, int len)
+        {
+            return new WordWrapJava01(len).wrap(words);
+        }
         public String wrap(String words)
         {
             if (words.Length <= _maxLength)
@@ -46,11 +45,8 @@ namespace Textumbruch
         {
             return words.Substring(0, wrapAt) + _separator + wrap(words.Substring(wrapAt + skipChars));
         }
-
-        public static String wrap(String words, int len)
-        {
-            return new WordWrapJava01(len).wrap(words);
-        }
-
     }
 }
+
+
+// "Es blaut die Nacht,die Sternlein blinken, Schneeflöcklein leis hernieder sinken."

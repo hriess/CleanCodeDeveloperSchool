@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace Textumbruch
 {
     [TestFixture]
-    class HelloWorldTests
+    class TextumbruchTests
     {
         // private int i = 0;
         //[Test]
@@ -39,5 +40,7 @@ namespace Textumbruch
                 
             }
         }
+
+        te
     }
 }
