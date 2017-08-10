@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace HelloWorldTests
+namespace Textumbruch
 {
     [TestFixture]
     class HelloWorldTests
