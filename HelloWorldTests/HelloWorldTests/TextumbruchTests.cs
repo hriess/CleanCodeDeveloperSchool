@@ -11,7 +11,7 @@ namespace Textumbruch
     [TestFixture]
     class TextumbruchTests
     {
-        private string TestString = "Es blaut die Nacht,die Sternlein blinken, Schneeflöcklein leis hernieder sinken.";
+        private string TestString = "Es blaut die Nacht, die Sternlein blinken, Schneeflöcklein leis hernieder sinken.";
 
         // private int i = 0;
         //[Test]
@@ -50,5 +50,19 @@ namespace Textumbruch
             Assert.That("Es blaut\ndie\nNacht,die\nSternlein\nblinken,\nSchneeflöc\nklein leis\nhernieder\nsinken.", Is.EqualTo(x.wrap(TestString)));
         }
 
+        [Test]
+        public void WordWrap80()
+        {
+            var x = new WordWrapJava01(80);
+            Assert.That("Es blaut die Nacht, die Sternlein blinken, Schneeflöcklein leis hernieder\nsinken.", Is.EqualTo(x.wrap(TestString)));
+        }
+
+
+        [Test]
+        public void WordWrap81()
+        {
+            var x = new WordWrapJava01(81);
+            Assert.That("Es blaut die Nacht, die Sternlein blinken, Schneeflöcklein leis hernieder sinken.", Is.EqualTo(x.wrap(TestString)));
+        }
     }
 }

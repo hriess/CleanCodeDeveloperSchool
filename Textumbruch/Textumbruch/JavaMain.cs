@@ -8,7 +8,7 @@ namespace Textumbruch
         static void Main(string[] args)
         {
             
-            for (int i = 10; i < 86; i += 5)
+            for (int i = 80; i < 86; i += 1)
             {
                 Console.Out.WriteLine(string.Concat(Enumerable.Repeat("_", i-1))+ "|  " + i);
                 //WordWrapJava01 x = new WordWrapJava01(int.Parse(args[1]));
